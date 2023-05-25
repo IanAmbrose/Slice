@@ -19,10 +19,7 @@ This tool is a Python script that automates the process of fetching secrets from
 ## AWS Configuration
 If you plan to upload secrets to AWS Secrets Manager, you need to configure your AWS credentials by using the AWS CLI. The script uses boto3 to interact with AWS.
 
-Run `aws configure --profile your_profile_name` to set up a new profile, and enter your AWS Access Key ID, AWS Secret Access Key, Default region name, and Default output format when prompted.
-
-Slice Profiles - [development,production,sandbox]
-Profile regions - us-east-2
+Setup can be found at: https://mypizza.atlassian.net/wiki/spaces/DEVOPS/pages/3741614125/AWS+CLI+Login+via+OneLogin#Setup
 
 You can then use the profiles by passing the profile name to the `--aws_profile` parameter when running the script.
     
