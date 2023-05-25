@@ -3,19 +3,22 @@ import json
 import hvac
 import argparse
 
-def fetch_secrets(vault_addr, vault_token, service, env):
+def fetch_secrets(vault_addr, vault_token, service, env=None):
     client = hvac.Client(url=vault_addr, token=vault_token)
 
     if not client.is_authenticated():
         raise Exception('Vault authentication failed.')
 
-    secret_path = f'{service}/{env}'
+    secret_path = f'{service}'
+    if env:
+        secret_path = f'{service}/{env}'
+
     list_response = client.secrets.kv.v1.list_secrets(path=secret_path, mount_point='secret')
 
     secrets = {}
     for secret in list_response['data']['keys']:
         read_response = client.secrets.kv.v1.read_secret(path=f"{secret_path}/{secret}", mount_point='secret')
-        secrets[secret] = read_response['data']
+        secrets[secret] = read_response['data']['value']
 
     return secrets
 
