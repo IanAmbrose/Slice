@@ -2,10 +2,6 @@
 
 This tool is a Python script that automates the process of fetching secrets from HashiCorp's Vault and uploading them to AWS Secrets Manager. It was created to simplify the process of migrating secrets between these two systems. 
 
-## Why Use This Tool
-
-This script is particularly useful if your team is transitioning from using Vault to AWS Secrets Manager for secrets management. Manually transferring secrets between these services can be time-consuming and error-prone, especially for a large number of secrets. This script streamlines that process and reduces the risk of human error.
-
 ## Prerequisites
 
 - Python 3.6 or later.
