@@ -11,10 +11,10 @@ This tool is a Python script that automates the process of fetching secrets from
 - AWS credentials that have permission to create secrets in AWS Secrets Manager.
 
 ## Input parameters
-<service>: The service for which to retrieve secrets. This is a required parameter.
-<env>: The environment for which to retrieve secrets. This is optional. If not provided, the script will retrieve secrets for the service irrespective of the environment.
-<sm_store_path>: AWS Secret Manager store path to upload secrets. This is optional. If provided, the script will upload the fetched secrets from Vault to the specified path in AWS Secrets Manager.
-<aws_profile>: AWS profile to use for uploading to Secrets Manager. This is optional. If not provided, the script will use the 'default' profile.
+- <service>: The service for which to retrieve secrets. This is a required parameter.
+- <env>: The environment for which to retrieve secrets. This is optional. If not provided, the script will retrieve secrets for the service irrespective of the environment.
+- <sm_store_path>: AWS Secret Manager store path to upload secrets. This is optional. If provided, the script will upload the fetched secrets from Vault to the specified path in AWS Secrets Manager.
+- <aws_profile>: AWS profile to use for uploading to Secrets Manager. This is optional. If not provided, the script will use the 'default' profile.
 
 ## AWS Configuration
 If you plan to upload secrets to AWS Secrets Manager, you need to configure your AWS credentials by using the AWS CLI. The script uses boto3 to interact with AWS.
