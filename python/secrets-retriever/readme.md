@@ -44,7 +44,7 @@ You can then use the profiles by passing the profile name to the `--aws_profile`
     python fetch_and_upload_secrets.py user-service --sm_store_path user-service/dev/secret --aws_profile development
     ```
 
-    In this example, replace `my_service` with the name of your service and `/my/sm/path` with your desired path in AWS Secrets Manager.
+    In this example, replace `user-service` with the name of your service and `user-service/dev/secret` with your desired path in AWS Secrets Manager.
 
     If you want to specify an environment, you can do so with the `--env` option:
 
@@ -52,6 +52,6 @@ You can then use the profiles by passing the profile name to the `--aws_profile`
       python fetch_and_upload_secrets.py user-service --env dev --sm_store_path /user-service/dev/secret --aws_profile development
      ```
 
-    Again, replace `my_service`, `my_environment`, `/my/sm/path`, and `my_aws_profile` with your actual values.
+    Again, replace `user-service`, `dev`, `user-service/dev/secret`, and `development` with your actual values.
 
 Please note: This script will fail if a secret with the given name already exists in AWS Secrets Manager. If you need to overwrite existing secrets, you will need to modify the script to use the `update_secret` method or handle exceptions that arise from trying to create a duplicate secret.
